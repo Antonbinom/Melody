@@ -1,0 +1,68 @@
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: rgba(0, 0, 0, 0.8)
+	position: 0
+	transform: scale(0)
+	transition: opacity 0.2
+	&__dialog
+		position: relative
+		max-width: 1000px
+		min-height: 565px
+		background-color: $light
+		flex-grow: 1
+		display: flex
+		opacity: 0
+		transform: translateY(-10% )
+		transition: transform 0.2s, opacity 0.2s
+		transition-delay: 0.2s
+	&-close-button
+		position: absolute
+		top: 38px
+		right: 27px
+	&__image
+		text-align: center
+		width: 60%
+		padding: 50px
+		background-color: #ebebeb
+	&-flats
+		& path
+			opacity: 0
+			cursor: pointer
+			&:hover
+				opacity: 1
+	&-title
+		margin-bottom: 55px
+		font-family: 'Bebas Neue Cyrillic', sans-serif
+		font-style: normal
+		font-weight: normal
+		font-size: 24px
+		line-height: 29px
+		text-transform: uppercase
+		color: $dark
+	&__info
+		width: 40%
+		padding: 50px 46px
+	&__list
+		padding: 0
+		margin: 0
+		list-style: none
+		&-item
+			color: $brown
+			margin-bottom: 10px
+		&-link
+			&:hover
+				color: $blue
+				text-decoration: underline
+.is-open
+	opacity: 1
+	transform: scale(1)
+.is-open > .modal__dialog
+	opacity: 1
+	transform: translateY(0)
